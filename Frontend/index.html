@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Load URL</title>
+</head>
+<body>
+  <div id="url-container">
+    <!-- URL will be displayed here -->
+  </div>
+  <button id="continue-btn">Continue</button>
+
+  <script>
+    // Function to load the URL when the button is clicked
+    document.getElementById('continue-btn').addEventListener('click', function() {
+      // Read the content of connect.txt
+      fetch('connect.txt')
+        .then(response => response.text())
+        .then(url => {
+          // Open the URL in a new tab/window
+          window.open(url, '_blank');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    // Function to display the URL
+    function displayURL(url) {
+      var urlContainer = document.getElementById('url-container');
+      urlContainer.innerText = 'URL: ' + url;
+    }
+
+    // Load the URL from connect.txt when the page loads
+    fetch('connect.txt')
+      .then(response => response.text())
+      .then(url => {
+        displayURL(url);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
