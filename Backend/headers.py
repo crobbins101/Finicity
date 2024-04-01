@@ -1,5 +1,5 @@
 CONTENT_TYPE = 'application/json'
 ACCEPT = 'application/json'
-APP_KEY = '2721c30874e4e99df7c8964e4d07cf95'
-PARTNER_ID = '2445584469258'
-PARTNER_SECRET = 'xtttLuFlAm1PQwkywfYp'
+APP_KEY = 'key'
+PARTNER_ID = 'id'
+PARTNER_SECRET = 'secret'
